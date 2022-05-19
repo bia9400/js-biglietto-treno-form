@@ -1,7 +1,7 @@
 let buttonGenerate=document.getElementById("button1")
 let deleteButton=document.getElementById("button2");
 deleteButton.addEventListener("click", function(){
-
+    window.location.reload();
 });
 buttonGenerate.addEventListener("click", function () {
     
