@@ -1,6 +1,8 @@
 let buttonGenerate=document.getElementById("button1")
 let deleteButton=document.getElementById("button2");
+deleteButton.addEventListener("click", function(){
 
+});
 buttonGenerate.addEventListener("click", function () {
     
 
@@ -10,11 +12,11 @@ buttonGenerate.addEventListener("click", function () {
     let km = document.getElementById("userKm");
    
     let tariffaAlKilometro = km.value * 0.21;
-    let myName = name.vlaue;
+    let myName = name.value;
     let myEta = eta.value;
     let myKm = km.value;
     
-
+    
  
 
         if (myEta <= 0 || myKm <= 0) {
@@ -35,24 +37,24 @@ buttonGenerate.addEventListener("click", function () {
             showTicket.className="d-block";
             let userNamePrint = document.querySelector(".nameChanged");
             userNamePrint.innerHTML= `${myName}` ;
-
+            console.log("userNamePrint ",userNamePrint, "myName", myName)
             if (myEta < 18) {
                 prezzoBiglietto = tariffaAlKilometro - (tariffaAlKilometro * 0.2)
-                let printTicket = document.getElementById("exercise")
+                let printTicket = document.querySelector(".costoBiglietto")
 
-                printTicket.innerHTML = (`<li>Età: ${myEta} anni </li> <li>Chilometri da percorrere: ${myKm} Km</li> <li>Prezzo biglietto: ${(Math.round(prezzoBiglietto * 100) / 100)} $</li>`)
+                printTicket.innerHTML = (` ${(Math.round(prezzoBiglietto * 100) / 100)} `)
             }
             else if (myEta > 65) {
                 prezzoBiglietto = tariffaAlKilometro - (tariffaAlKilometro * 0.4)
-                let printTicket = document.getElementById("exercise")
+                let printTicket = document.querySelector(".costoBiglietto")
 
-                printTicket.innerHTML = (`<li>Età: ${myEta} anni </li> <li>Chilometri da percorrere: ${myKm} Km</li> <li>Prezzo biglietto: ${(Math.round(prezzoBiglietto * 100) / 100)} $</li>`)
+                printTicket.innerHTML = (` ${(Math.round(prezzoBiglietto * 100) / 100)} `)
             }
             else {
                 prezzoBiglietto = tariffaAlKilometro
-                let printTicket = document.getElementById("exercise")
+                let printTicket = document.querySelector(".costoBiglietto")
 
-                printTicket.innerHTML = (`<li>Età: ${myEta} anni </li> <li>Chilometri da percorrere: ${myKm} Km</li> <li>Prezzo biglietto: ${(Math.round(prezzoBiglietto * 100) / 100)} $</li>`)
+                printTicket.innerHTML = (` ${(Math.round(prezzoBiglietto * 100) / 100)} `)
 
             }
         }
